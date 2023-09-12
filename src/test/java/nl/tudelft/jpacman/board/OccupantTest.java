@@ -67,4 +67,5 @@ class OccupantTest {
         assertThat(square.getOccupants()).doesNotContain(unit);
         assertThat(anotherSquare.getOccupants()).contains(unit);
     }
+
 }
