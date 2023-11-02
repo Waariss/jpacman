@@ -31,7 +31,7 @@ public class BoardTest {
     */
     @Test
     void squareAtReturnsCorrectSquare() {
-        assertThat(board.squareAt(0, 0)).isInstanceOf(BasicSquare.class);
+        assertThat(board.squareAt(0,0)).isInstanceOf(BasicSquare.class);
     }
     /***
     *
