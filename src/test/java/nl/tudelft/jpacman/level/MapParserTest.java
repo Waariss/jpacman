@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 @ExtendWith(MockitoExtension.class)
 public class MapParserTest {
+    private static final int NUMBER_OF_WALLS = 26;
+    private static final int NUMBER_OF_GROUNDS = 10;
     @Mock
     private BoardFactory boardFactory;
     @Mock
@@ -28,6 +30,9 @@ public class MapParserTest {
     @Mock
     private Blinky blinky;
 
+    /**
+     * Initializes mockito mocks before each test.
+     */
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
@@ -50,7 +55,7 @@ public class MapParserTest {
         mapParser.parseMap(map);
 
         verify(levelFactory, times(1)).createGhost();
-        verify(boardFactory, times(26)).createWall();
-        verify(boardFactory, times(10)).createGround();
+        verify(boardFactory, times(NUMBER_OF_WALLS)).createWall();
+        verify(boardFactory, times(NUMBER_OF_GROUNDS)).createGround();
     }
 }
